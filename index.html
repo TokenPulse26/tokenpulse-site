@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TokenPulse is a local-first AI usage tracking proxy and dashboard for OpenAI, Anthropic, Google, Ollama, LM Studio, and more."
+    />
+    <title>TokenPulse | See every AI token you spend</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header" id="top">
+        <nav class="nav container">
+          <a class="brand" href="#top" aria-label="TokenPulse home">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span class="brand-text">TokenPulse</span>
+          </a>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-links"
+            aria-label="Toggle navigation"
+          >
+            <span></span>
+            <span></span>
+          </button>
+          <div class="nav-links" id="nav-links">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a
+              href="https://github.com/TokenPulse26/TokenPulse"
+              target="_blank"
+              rel="noreferrer"
+              >GitHub</a
+            >
+            <a class="button button-sm" href="#getting-started">Get Started</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero section">
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <div class="eyebrow">Local-first AI observability</div>
+              <h1>See every AI token you spend.</h1>
+              <p class="hero-subtitle">
+                One dashboard for OpenAI, Anthropic, Google, Ollama, and more.
+                Runs locally. Your data never leaves your machine.
+              </p>
+              <div class="hero-actions">
+                <a class="button" href="#getting-started">Get Started →</a>
+                <a
+                  class="button button-secondary"
+                  href="https://github.com/TokenPulse26/TokenPulse"
+                  target="_blank"
+                  rel="noreferrer"
+                  >View on GitHub</a
+                >
+              </div>
+              <ul class="hero-meta" aria-label="Product highlights">
+                <li>8 providers</li>
+                <li>SQLite storage</li>
+                <li>Streaming passthrough</li>
+                <li>100% self-hosted</li>
+              </ul>
+            </div>
+
+            <div class="hero-visual" aria-label="TokenPulse proxy flow diagram">
+              <div class="flow-stage">
+                <div class="flow-panel">
+                  <span class="flow-label">Your AI Tools</span>
+                  <div class="chip-list">
+                    <span>Cursor</span>
+                    <span>Claude Code</span>
+                    <span>OpenAI SDK</span>
+                  </div>
+                </div>
+                <div class="flow-arrow flow-arrow-horizontal">
+                  <span class="flow-dot dot-1"></span>
+                  <span class="flow-dot dot-2"></span>
+                  <span class="flow-dot dot-3"></span>
+                </div>
+                <div class="flow-panel flow-panel-accent">
+                  <span class="flow-label">TokenPulse Proxy</span>
+                  <p>Interception, token counting, pricing, SQLite logging</p>
+                </div>
+                <div class="flow-arrow flow-arrow-horizontal">
+                  <span class="flow-dot dot-4"></span>
+                  <span class="flow-dot dot-5"></span>
+                  <span class="flow-dot dot-6"></span>
+                </div>
+                <div class="flow-panel">
+                  <span class="flow-label">AI Providers</span>
+                  <div class="chip-list">
+                    <span>OpenAI</span>
+                    <span>Anthropic</span>
+                    <span>Ollama</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flow-arrow flow-arrow-vertical">
+                <span class="flow-dot dot-7"></span>
+                <span class="flow-dot dot-8"></span>
+              </div>
+              <div class="dashboard-node">
+                <span class="flow-label">Local Dashboard</span>
+                <p>Spend, trends, budgets, model mix, optimizer signals</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-problem" id="problem">
+          <div class="container">
+            <div class="section-heading">
+              <div class="eyebrow">The bottleneck</div>
+              <h2>The problem with AI spending</h2>
+              <p>
+                The more models and providers you use, the harder it gets to
+                understand where cost is coming from and what to change.
+              </p>
+            </div>
+            <div class="problem-grid">
+              <article class="problem-card">
+                <span class="problem-icon" aria-hidden="true">🔀</span>
+                <h3>Scattered billing</h3>
+                <p>
+                  Juggling 4+ provider dashboards to understand what you're
+                  spending.
+                </p>
+              </article>
+              <article class="problem-card">
+                <span class="problem-icon" aria-hidden="true">🔒</span>
+                <h3>Invisible local usage</h3>
+                <p>
+                  Running Ollama and LM Studio with zero visibility into what
+                  they're doing.
+                </p>
+              </article>
+              <article class="problem-card">
+                <span class="problem-icon" aria-hidden="true">📊</span>
+                <h3>No single view</h3>
+                <p>
+                  No way to compare cloud costs vs local performance in one
+                  place.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="how-it-works">
+          <div class="container">
+            <div class="section-heading">
+              <div class="eyebrow">How it works</div>
+              <h2>Three steps. Five minutes.</h2>
+              <p>
+                TokenPulse sits in the request path, records the useful parts,
+                and gives you one local dashboard instead of eight tabs.
+              </p>
+            </div>
+            <div class="steps-grid">
+              <article class="step-card">
+                <div class="step-number">01</div>
+                <h3>Point your tools at TokenPulse</h3>
+                <p>Change one environment variable. That's it.</p>
+                <pre><code>export OPENAI_BASE_URL=http://localhost:4100</code></pre>
+              </article>
+              <article class="step-card">
+                <div class="step-number">02</div>
+                <h3>TokenPulse intercepts and logs</h3>
+                <p>
+                  Every request flows through the proxy. Usage metadata is
+                  stored locally in SQLite.
+                </p>
+              </article>
+              <article class="step-card">
+                <div class="step-number">03</div>
+                <h3>Open your dashboard</h3>
+                <p>
+                  Real-time spend, model breakdowns, budgets, and optimization
+                  signals at <code>localhost:4200</code>.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section showcase-section" id="showcase">
+          <div class="container">
+            <div class="section-heading">
+              <div class="eyebrow">Dashboard</div>
+              <h2>Your AI command center</h2>
+              <p>
+                Track live requests, budget pressure, model performance, and
+                cost-saving opportunities from one dashboard built for daily use.
+              </p>
+            </div>
+            <div class="showcase-layout">
+              <figure class="shot-card shot-primary tilt-left">
+                <img
+                  src="screenshots/dashboard-full.png"
+                  alt="TokenPulse dashboard overview with live stats and request feed"
+                  loading="eager"
+                />
+              </figure>
+              <figure class="shot-card shot-secondary top">
+                <img
+                  src="screenshots/dashboard-mid.png"
+                  alt="TokenPulse dashboard charts and provider breakdowns"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="shot-card shot-secondary bottom">
+                <img
+                  src="screenshots/dashboard-budget.png"
+                  alt="TokenPulse budget tracking and threshold controls"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="showcase-sidebar">
+                <article class="mini-shot-card">
+                  <img
+                    src="screenshots/dashboard-optimizer.png"
+                    alt="TokenPulse optimizer suggestions"
+                    loading="lazy"
+                  />
+                  <div>
+                    <h3>Optimization hints</h3>
+                    <p>Catch expensive model choices before they compound.</p>
+                  </div>
+                </article>
+                <article class="mini-shot-card">
+                  <img
+                    src="screenshots/dashboard-heatmap.png"
+                    alt="TokenPulse usage heatmap"
+                    loading="lazy"
+                  />
+                  <div>
+                    <h3>Usage heatmaps</h3>
+                    <p>See when teams, agents, or scripts actually spike.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="features">
+          <div class="container">
+            <div class="section-heading">
+              <div class="eyebrow">Features</div>
+              <h2>Built for power users</h2>
+              <p>
+                Everything important stays local, but the visibility is good
+                enough for serious day-to-day optimization work.
+              </p>
+            </div>
+            <div class="features-grid">
+              <article class="feature-card">
+                <span class="feature-icon">🔌</span>
+                <h3>8 Providers</h3>
+                <p>
+                  OpenAI, Anthropic, Google, Mistral, Groq, Ollama, LM Studio,
+                  CLIProxy, all through one proxy.
+                </p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">💰</span>
+                <h3>Real-time cost tracking</h3>
+                <p>
+                  Per-request token counts and cost calculation as requests flow
+                  through.
+                </p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">📈</span>
+                <h3>Budget alerts</h3>
+                <p>
+                  Set spending limits, get notified before you blow through
+                  them.
+                </p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">🏠</span>
+                <h3>100% local</h3>
+                <p>
+                  SQLite database on your machine. No account, no cloud, no data
+                  sharing.
+                </p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <h3>Streaming support</h3>
+                <p>
+                  Full SSE streaming passthrough with live token counting.
+                </p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">🔍</span>
+                <h3>Cost optimizer</h3>
+                <p>
+                  Detects model misuse and suggests cheaper alternatives that
+                  fit.
+                </p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">📊</span>
+                <h3>Forecasting</h3>
+                <p>
+                  Monthly spend projections based on your actual usage patterns.
+                </p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon">📤</span>
+                <h3>CSV export</h3>
+                <p>
+                  Export everything for spreadsheets, reports, or your own
+                  analysis.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section comparison-section" id="comparison">
+          <div class="container">
+            <div class="section-heading">
+              <div class="eyebrow">Comparison</div>
+              <h2>How TokenPulse compares</h2>
+              <p>
+                Local model visibility and zero-account setup are the main
+                differentiators, especially if you already run AI tools on your
+                own machine.
+              </p>
+            </div>
+            <div class="comparison-table-wrap">
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>TokenPulse</th>
+                    <th>Helicone</th>
+                    <th>LiteLLM</th>
+                    <th>CostGoat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Local model tracking</td>
+                    <td>✅</td>
+                    <td>❌</td>
+                    <td>Partial</td>
+                    <td>❌</td>
+                  </tr>
+                  <tr>
+                    <td>Real-time proxy</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>❌ (polls)</td>
+                  </tr>
+                  <tr>
+                    <td>100% self-hosted</td>
+                    <td>✅</td>
+                    <td>✅ (OSS)</td>
+                    <td>✅ (OSS)</td>
+                    <td>❌</td>
+                  </tr>
+                  <tr>
+                    <td>No account required</td>
+                    <td>✅</td>
+                    <td>❌</td>
+                    <td>❌</td>
+                    <td>❌</td>
+                  </tr>
+                  <tr>
+                    <td>Data stays local</td>
+                    <td>✅</td>
+                    <td>❌</td>
+                    <td>❌</td>
+                    <td>✅</td>
+                  </tr>
+                  <tr>
+                    <td>Price</td>
+                    <td>Free</td>
+                    <td>Free-$500/mo</td>
+                    <td>Free</td>
+                    <td>$9/mo</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section getting-started-section" id="getting-started">
+          <div class="container getting-started-grid">
+            <div class="section-heading section-heading-left">
+              <div class="eyebrow">Getting started</div>
+              <h2>Up and running in 5 minutes</h2>
+              <p>
+                Clone the repo, build the Tauri app, start the dashboard, and
+                point your tools at the local proxy.
+              </p>
+              <div class="platform-list" aria-label="Supported platforms">
+                <span> macOS</span>
+                <span>🐧 Linux</span>
+              </div>
+              <a
+                class="text-link"
+                href="https://github.com/TokenPulse26/TokenPulse#readme"
+                target="_blank"
+                rel="noreferrer"
+                >Read the full getting started guide</a
+              >
+            </div>
+            <div class="code-panel">
+              <pre><code>git clone https://github.com/TokenPulse26/TokenPulse.git
+cd TokenPulse/src-tauri &amp;&amp; cargo build --release &amp;&amp; cd ..
+python3 web-dashboard.py
+# Open http://localhost:4200</code></pre>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <a class="brand footer-brand" href="#top">
+              <span class="brand-mark" aria-hidden="true"></span>
+              <span class="brand-text">TokenPulse</span>
+            </a>
+            <p class="footer-note">Built by New Age Investments</p>
+          </div>
+          <div class="footer-links">
+            <a
+              href="https://github.com/TokenPulse26/TokenPulse"
+              target="_blank"
+              rel="noreferrer"
+              >GitHub</a
+            >
+            <a
+              href="https://github.com/TokenPulse26/TokenPulse#readme"
+              target="_blank"
+              rel="noreferrer"
+              >Getting Started</a
+            >
+            <a
+              href="https://github.com/TokenPulse26/TokenPulse/releases"
+              target="_blank"
+              rel="noreferrer"
+              >Changelog</a
+            >
+          </div>
+          <div class="footer-meta">
+            <span class="license-badge">MIT License</span>
+            <span>© 2026</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const header = document.querySelector(".site-header");
+      const toggle = document.querySelector(".nav-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      const syncHeader = () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 24);
+      };
+
+      syncHeader();
+      window.addEventListener("scroll", syncHeader, { passive: true });
+
+      toggle.addEventListener("click", () => {
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        navLinks.classList.toggle("is-open", !expanded);
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          toggle.setAttribute("aria-expanded", "false");
+          navLinks.classList.remove("is-open");
+        });
+      });
+    </script>
+  </body>
+</html>
