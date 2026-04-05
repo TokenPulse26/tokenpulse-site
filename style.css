@@ -332,6 +332,12 @@ pre {
     rgba(255, 255, 255, 0.03);
 }
 
+.flow-panel-accent .flow-label {
+  white-space: nowrap;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+}
+
 .flow-panel p {
   font-size: 0.78rem;
   line-height: 1.4;
