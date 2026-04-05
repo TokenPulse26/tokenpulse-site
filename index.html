@@ -77,51 +77,66 @@
             </div>
 
             <div class="hero-visual" aria-label="TokenPulse proxy flow diagram">
-              <div class="flow-stage">
-                <div class="flow-panel">
-                  <span class="flow-label">Your AI Tools</span>
-                  <div class="chip-list">
+              <div class="vflow">
+                <div class="vflow-node">
+                  <span class="vflow-label">Your AI Tools</span>
+                  <div class="vflow-chips">
                     <span>Cursor</span>
                     <span>Claude</span>
                     <span>Codex</span>
                     <span>Any Tool</span>
                   </div>
                 </div>
-                <div class="flow-arrow flow-arrow-horizontal">
-                  <span class="flow-dot dot-1"></span>
-                  <span class="flow-dot dot-2"></span>
-                  <span class="flow-dot dot-3"></span>
+
+                <div class="vflow-arrow">
+                  <span class="vflow-dot vdot-1"></span>
+                  <span class="vflow-dot vdot-2"></span>
                 </div>
-                <div class="flow-panel flow-panel-accent">
-                  <span class="flow-label">TokenPulse Proxy</span>
-                  <p>Token counting · Cost tracking · Local logging</p>
-                </div>
-                <div class="flow-arrow flow-arrow-horizontal">
-                  <span class="flow-dot dot-4"></span>
-                  <span class="flow-dot dot-5"></span>
-                  <span class="flow-dot dot-6"></span>
-                </div>
-                <div class="flow-panel">
-                  <span class="flow-label">AI Providers</span>
-                  <div class="chip-list">
-                    <span>OpenAI</span>
-                    <span>Anthropic</span>
-                    <span>Google</span>
-                    <span>xAI</span>
-                    <span>DeepSeek</span>
-                    <span>Kimi</span>
-                    <span>Mistral</span>
-                    <span>Ollama</span>
+
+                <div class="vflow-node vflow-node-accent">
+                  <span class="vflow-label">TokenPulse Proxy</span>
+                  <div class="vflow-details">
+                    <span>⚡ Token counting</span>
+                    <span>💰 Cost tracking</span>
+                    <span>💾 Local SQLite logging</span>
                   </div>
                 </div>
-              </div>
-              <div class="flow-arrow flow-arrow-vertical">
-                <span class="flow-dot dot-7"></span>
-                <span class="flow-dot dot-8"></span>
-              </div>
-              <div class="dashboard-node">
-                <span class="flow-label">Local Dashboard</span>
-                <p>Spend, trends, budgets, model mix, optimizer signals</p>
+
+                <div class="vflow-split">
+                  <div class="vflow-branch">
+                    <div class="vflow-arrow">
+                      <span class="vflow-dot vdot-3"></span>
+                      <span class="vflow-dot vdot-4"></span>
+                    </div>
+                    <div class="vflow-node">
+                      <span class="vflow-label">AI Providers</span>
+                      <div class="vflow-chips">
+                        <span>OpenAI</span>
+                        <span>Anthropic</span>
+                        <span>Google</span>
+                        <span>xAI</span>
+                        <span>DeepSeek</span>
+                        <span>Kimi</span>
+                        <span>Mistral</span>
+                        <span>Ollama</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vflow-branch">
+                    <div class="vflow-arrow">
+                      <span class="vflow-dot vdot-5"></span>
+                      <span class="vflow-dot vdot-6"></span>
+                    </div>
+                    <div class="vflow-node">
+                      <span class="vflow-label">Local Dashboard</span>
+                      <div class="vflow-details">
+                        <span>📊 Spend &amp; trends</span>
+                        <span>🎯 Budgets &amp; alerts</span>
+                        <span>🔍 Optimizer signals</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
