@@ -55,8 +55,7 @@
               <div class="eyebrow">Local-first AI observability</div>
               <h1>See every AI token you spend.</h1>
               <p class="hero-subtitle">
-                One dashboard for OpenAI, Anthropic, Google, Ollama, OpenRouter, and more.
-                Runs locally. Your data never leaves your machine.
+                Free early access for technical testers on macOS Apple Silicon. One local-first hub for agent setups, local models, and multiple cloud APIs.
               </p>
               <div class="hero-actions">
                 <a class="button" href="#getting-started">Get Started →</a>
@@ -69,10 +68,10 @@
                 >
               </div>
               <ul class="hero-meta" aria-label="Product highlights">
-                <li>10+ providers</li>
-                <li>SQLite storage</li>
-                <li>Streaming passthrough</li>
-                <li>100% self-hosted</li>
+                <li>Free early access</li>
+                <li>macOS Apple Silicon</li>
+                <li>Local-first usage hub</li>
+                <li>Browser dashboard</li>
               </ul>
             </div>
 
@@ -209,8 +208,7 @@
                 <div class="step-number">03</div>
                 <h3>Open your dashboard</h3>
                 <p>
-                  Real-time spend, model breakdowns, budgets, and optimization
-                  signals at <code>localhost:4200</code>.
+                  The main dashboard runs in your browser at <code>http://127.0.0.1:4200</code>.
                 </p>
               </article>
             </div>
@@ -429,15 +427,16 @@
           <div class="container getting-started-grid">
             <div class="section-heading section-heading-left">
               <div class="eyebrow">Getting started</div>
-              <h2>Up and running in 5 minutes</h2>
+              <h2>One command install for v1 early access</h2>
               <p>
-                Clone the repo, build the proxy, start the dashboard, and
-                point your tools at the local proxy.
+                TokenPulse v1 is free early access for technical testers on
+                macOS Apple Silicon. Install it, then open the browser dashboard.
               </p>
               <div class="platform-list" aria-label="Supported platforms">
-                <span> macOS</span>
-                <span>🐧 Linux</span>
+                <span> macOS Apple Silicon</span>
+                <span>🧪 Early access testers</span>
               </div>
+              <p>Linux, Windows, and NVIDIA setups are planned for later releases.</p>
               <a
                 class="text-link"
                 href="https://github.com/TokenPulse26/TokenPulse#readme"
@@ -447,13 +446,77 @@
               >
             </div>
             <div class="code-panel">
-              <pre><code>git clone https://github.com/TokenPulse26/TokenPulse.git
-cd TokenPulse/src-tauri &amp;&amp; cargo build --release &amp;&amp; cd ..
-python3 web-dashboard.py
-# Open http://localhost:4200</code></pre>
+              <pre><code>curl -fsSL https://raw.githubusercontent.com/TokenPulse26/TokenPulse/main/install.sh | bash
+
+# Proxy
+http://127.0.0.1:4100
+
+# Main browser dashboard
+http://127.0.0.1:4200</code></pre>
             </div>
           </div>
         </section>
+
+        <section class="section" id="agent-setup">
+          <div class="container">
+            <div class="section-heading">
+              <div class="eyebrow">Agent-installable</div>
+              <h2>Set up agents quickly</h2>
+              <p>
+                Follow the agent guide to connect your coding agents and tester
+                workflows to TokenPulse with a local-first setup.
+              </p>
+              <a class="text-link" href="https://github.com/TokenPulse26/TokenPulse/blob/main/AGENT_SETUP.md" target="_blank" rel="noreferrer">Open AGENT_SETUP.md</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="openclaw">
+          <div class="container">
+            <div class="section-heading">
+              <div class="eyebrow">OpenClaw ready</div>
+              <h2>Use TokenPulse with OpenClaw</h2>
+              <p>
+                TokenPulse includes an OpenClaw setup path for early testers.
+                Start with the official setup guide.
+              </p>
+              <a class="text-link" href="https://github.com/TokenPulse26/TokenPulse/blob/main/docs/OPENCLAW_SETUP.md" target="_blank" rel="noreferrer">Open OPENCLAW_SETUP.md</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="verify">
+          <div class="container">
+            <div class="section-heading">
+              <div class="eyebrow">Verify your install</div>
+              <h2>Run the built-in tester check</h2>
+              <p>
+                TokenPulse now includes <code>~/.tokenpulse/agent_verify.py</code>
+                for agent and tester verification, plus a first-tester QA pack.
+              </p>
+              <div class="code-panel">
+                <pre><code>python3 ~/.tokenpulse/agent_verify.py</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="routes">
+          <div class="container">
+            <div class="section-heading">
+              <div class="eyebrow">Route examples</div>
+              <h2>Use the right local endpoint</h2>
+              <p>These are common base URLs for v1:</p>
+            </div>
+            <div class="code-panel">
+              <pre><code>OpenAI-compatible: http://localhost:4100
+Anthropic:        http://localhost:4100/anthropic
+Ollama:           http://localhost:4100/ollama
+LM Studio:        http://localhost:4100/lmstudio</code></pre>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       <footer class="site-footer">
